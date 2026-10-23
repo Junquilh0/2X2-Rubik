@@ -88,6 +88,9 @@ def simplifica_sequencia (seq):
         elif k+1<len(seq) and seq[k] == movimento_inverso(seq[k+1]):
             k += 2 
             i += 1
+        elif k+3<len(seq) and seq[k] == seq[k+1] == seq[k+2] == seq[k+3]:
+            k += 4
+            i += 1
         else:
             r += (seq[k],)
             k += 1
@@ -95,3 +98,4 @@ def simplifica_sequencia (seq):
         return simplifica_sequencia(r)
     return r
 
+print(sequencia_para_str(simplifica_sequencia(str_para_sequencia("FRUU'R'"))))
